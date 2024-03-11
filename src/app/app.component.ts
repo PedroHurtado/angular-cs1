@@ -5,6 +5,7 @@ import { spinner } from './spinner';
 import { GridComponent } from './calendar/grid/grid.component';
 import { CounterComponent } from './signal/counter/counter.component';
 import { TimerComponent } from './signal/timer/timer.component';
+import { LayoutComponent } from './pages/layout/layout.component';
 
 interface Response{
   id:number,
@@ -24,7 +25,8 @@ export interface ISpinner{
     RouterOutlet,
     GridComponent,
     CounterComponent,
-    TimerComponent
+    TimerComponent,
+    LayoutComponent
   ],
   providers:[CreateService<Response>],
   templateUrl: './app.component.html',
