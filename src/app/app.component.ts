@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { CreateService } from './create.service';
 import { spinner } from './spinner';
 import { GridComponent } from './calendar/grid/grid.component';
+import { CounterComponent } from './signal/counter/counter.component';
 
 interface Response{
   id:number,
@@ -20,7 +21,8 @@ export interface ISpinner{
   standalone: true,
   imports: [
     RouterOutlet,
-    GridComponent
+    GridComponent,
+    CounterComponent
   ],
   providers:[CreateService<Response>],
   templateUrl: './app.component.html',
