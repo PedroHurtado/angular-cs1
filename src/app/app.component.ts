@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, viewChild } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CreateService } from './create.service';
 import { spinner } from './spinner';
@@ -7,6 +7,7 @@ import { CounterComponent } from './signal/counter/counter.component';
 import { TimerComponent } from './signal/timer/timer.component';
 import { LayoutComponent } from './pages/layout/layout.component';
 import { AcordeonComponent } from './acordeon/acordeon.component';
+import { ModalComponent } from './modal/modal.component';
 
 interface Response{
   id:number,
@@ -28,7 +29,8 @@ export interface ISpinner{
     CounterComponent,
     TimerComponent,
     LayoutComponent,
-    AcordeonComponent
+    AcordeonComponent,
+    ModalComponent
   ],
   providers:[CreateService<Response>],
   templateUrl: './app.component.html',
@@ -37,6 +39,7 @@ export interface ISpinner{
 export class AppComponent implements ISpinner{
   title = 'my-app';
   message= ''
+  modal = viewChild<ModalComponent>('modal');
   constructor(private service:CreateService<Response>){
     //this.create({id:1,name:'pedro'});
   }
@@ -52,5 +55,8 @@ export class AppComponent implements ISpinner{
   @spinner("el cliente no existe")
   async create(request:any){
     const response = await this.service.add(request)
+  }
+  handlerClick(ev:Event){
+    this.modal()?.open()
   }
 }
