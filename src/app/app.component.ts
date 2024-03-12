@@ -6,6 +6,7 @@ import { GridComponent } from './calendar/grid/grid.component';
 import { CounterComponent } from './signal/counter/counter.component';
 import { TimerComponent } from './signal/timer/timer.component';
 import { LayoutComponent } from './pages/layout/layout.component';
+import { AcordeonComponent } from './acordeon/acordeon.component';
 
 interface Response{
   id:number,
@@ -26,7 +27,8 @@ export interface ISpinner{
     GridComponent,
     CounterComponent,
     TimerComponent,
-    LayoutComponent
+    LayoutComponent,
+    AcordeonComponent
   ],
   providers:[CreateService<Response>],
   templateUrl: './app.component.html',
