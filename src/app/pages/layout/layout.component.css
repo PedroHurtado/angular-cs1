@@ -1,5 +1,5 @@
 :host{
   display: grid;
-  grid-template-columns: 25% 0px 1fr;
+  grid-template-columns: 25% 1fr;
   gap: 0.5rem;
 }
